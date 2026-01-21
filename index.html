@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Future Value Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Form Validation</h1>
 <main>
-	<h3>Future Value</h3>
-	<div class="gridform">
-		<label for="principle">Principle: </label>
-		<input type="text" id="principle">
-		<label for="annualrate">Annual rate: </label>
-		<input type="text" id="annualrate" placeholder=".08">
-		<label for="years">Years: </label>
-		<input type="text" id="years">
-		<label for="periods">Periods: </label>
-		<input type="text" id="periods">
-	</div>
-	<button onclick="doFV()">Compute Future Value</button>
-	<hr> Future Value: <span id="output"></span>
+    <h3>Future Value</h3>
+    <div class="gridform">
+        <label for="principle">Principle: </label>
+        <input type="number" id="principle" step="0.01" required>
+
+        <label for="principle2">Verify Principle: </label>
+        <input type="number" id="principle2" step="0.01" required>
+
+        <label for="annualrate">Annual rate: </label>
+        <input type="number" id="annualrate" step="0.01" placeholder=".08" required>
+
+        <label for="years">Years: </label>
+        <input type="number" id="years" required>
+
+        <label for="periods">Periods: </label>
+        <input type="number" id="periods" required>
+    </div>
+    <p id="error-message" style="color: red; font-size: 0.8rem;"></p>
+    <button onclick="doFV()">Compute Future Value</button>
+    <hr> Future Value: <span id="output"></span>
 </main>
 <footer>&copy;<span id="theyear"></span> • Antonia Francesca • Utah • WDD</footer>
 </body>
